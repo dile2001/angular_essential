@@ -13,6 +13,11 @@
   <button type="button" (click)="share()">
     Share
   </button>
+  <app-product-alerts 
+    [product]="product"
+    (notify)="onNotify()"
+  >
+  </app-product-alerts>
   <!--/*share() method is in product-list.component.ts*/-->
 </div>
 
