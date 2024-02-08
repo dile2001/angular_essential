@@ -14,6 +14,10 @@ export class ProductDetailsComponent implements OnInit {
 
   product: Product | undefined;
   constructor(private route: ActivatedRoute) { }
+  /*
+  ActivatedRoute is specific to each component that the Angular Router loads. 
+  ActivatedRoute contains information about the route and the route's parameters.
+  */
   ngOnInit() {
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
