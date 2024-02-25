@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Product, products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   standalone: true,
@@ -13,7 +14,13 @@ import { Product, products } from '../products';
 export class ProductDetailsComponent implements OnInit {
 
   product: Product | undefined;
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private cartService: CartService) { }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('product has been added to cart');
+  }
   /*
   ActivatedRoute is specific to each component that the Angular Router loads. 
   ActivatedRoute contains information about the route and the route's parameters.
